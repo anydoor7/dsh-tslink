@@ -1,0 +1,52 @@
+{
+  "name": "dsh-tslink",
+  "version": "0.1.0",
+  "description": "Open your running local app on your phone or share a private HTTPS preview: the TSLink MCP server and the tslink-preview skill for DeepSeek Harness.",
+  "keywords": [
+    "dsh-plugin",
+    "dsh",
+    "mcp",
+    "tailscale",
+    "preview",
+    "dev-server",
+    "private-url",
+    "mobile"
+  ],
+  "author": "anydoor7",
+  "license": "Apache-2.0",
+  "homepage": "https://tslink.md/docs/agent-integrations",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anydoor7/dsh-tslink.git"
+  },
+  "bugs": {
+    "url": "https://github.com/anydoor7/tslink/issues"
+  },
+  "icon": "./icon.png",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./locale/*.json": "./locale/*.json",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "cordis.patch.yml",
+    "skills/tslink-preview/SKILL.md",
+    "locale/*.json",
+    "docs/DETAIL.md",
+    "icon.png",
+    "LICENSE",
+    "README.md"
+  ],
+  "engines": {
+    "dsh": ">=0.2.0-rc.1 <0.3.0-0"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}

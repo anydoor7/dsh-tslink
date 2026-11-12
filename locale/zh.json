@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "TSLink",
+    "description": "在手机上打开本机正在运行的应用,或私密分享 HTTPS 预览:TSLink MCP 工具加 tslink-preview 技能。",
+    "detail": "docs/DETAIL.md"
+  }
+}

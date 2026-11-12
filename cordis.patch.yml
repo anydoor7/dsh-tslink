@@ -1,0 +1,20 @@
+# dsh-tslink bundle layer: applied when a profile lists dsh-tslink in dsh.profile.bundles
+# (`dsh plugin --profile <name> add dsh-tslink` does that). Two rows:
+#
+# 1. tslink-mcp: the generic dsh MCP client launching the locally installed `tslink mcp`
+#    stdio server. Tools appear to the model as mcp__tslink__<tool>. The CLI is not
+#    bundled; `tslink` must be on the PATH dsh starts with.
+#    Read-only sessions: override this row in your profile's cordis.patch.yml with
+#    args: ['mcp', '--scope', 'viewer', '--inventory'] (see README).
+# 2. tslink-skill: this package's own plugin, registering the tslink-preview skill.
+- insert:
+    - id: tslink-mcp
+      name: '@deepseek-ai/dsh-mcp-client'
+      config:
+        serverName: tslink
+        transport: stdio
+        command: tslink
+        args: ['mcp']
+        startupTimeoutMs: 30000
+    - id: tslink-skill
+      name: dsh-tslink

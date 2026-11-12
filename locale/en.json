@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "TSLink",
+    "description": "Open a running local app on your phone or share a private HTTPS preview: TSLink MCP tools plus the tslink-preview skill.",
+    "detail": "docs/DETAIL.md"
+  }
+}
